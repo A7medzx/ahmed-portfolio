@@ -1,0 +1,1863 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+<title>Ahmed Mohamed SaadElDin | Cybersecurity & Penetration Testing</title>
+    <meta
+      name="description"
+      content="Ahmed Mohamed SaadElDin — Cybersecurity Specialist, Web Developer, and Computer Science Student."
+    />
+    <meta
+      name="keywords"
+      content="Ahmed Mohamed SaadElDin, Cybersecurity, Penetration Tester, Web Developer, Portfolio"
+    />
+    <meta name="author" content="Ahmed Mohamed SaadElDin" />
+
+    <!-- Favicon (Emoji) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              "brand-dark": "#0a0a0f",
+              "brand-darker": "#050508",
+              "brand-card": "#13131a",
+              "brand-accent": "#00e0a4",
+              "brand-accent-dark": "#00b882",
+              "brand-light": "#f5f5f7",
+              "brand-muted": "#a1a1aa",
+              "brand-purple": "#a78bfa",
+              "brand-blue": "#60a5fa",
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+              "gradient-conic":
+                "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            },
+            boxShadow: {
+              glow: "0 0 30px rgba(0, 224, 164, 0.25)",
+              "glow-lg": "0 0 50px rgba(0, 224, 164, 0.35)",
+              "glow-purple": "0 0 30px rgba(167, 139, 250, 0.25)",
+              glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              blob: "blob 7s infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              gradient: "gradient 8s ease infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              blob: {
+                "0%, 100%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+              },
+              gradient: {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="antialiased relative overflow-x-hidden text-brand-light font-sans bg-brand-darker"
+  >
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-brand-darker"
+    >
+      <div class="relative">
+        <div
+          class="w-16 h-16 border-4 border-brand-accent/20 border-t-brand-accent rounded-full animate-spin"
+        ></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-8 h-8 bg-brand-accent/20 rounded-full animate-pulse"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+      <div
+        class="absolute -top-40 -left-40 w-80 h-80 bg-brand-accent/10 rounded-full blur-[120px] animate-blob"
+      ></div>
+      <div
+        class="absolute top-40 -right-40 w-96 h-96 bg-brand-purple/10 rounded-full blur-[120px] animate-blob"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute -bottom-40 left-1/3 w-80 h-80 bg-brand-blue/10 rounded-full blur-[120px] animate-blob"
+        style="animation-delay: 4s"
+      ></div>
+
+      <!-- Grid Pattern -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"
+      ></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="absolute inset-0 bg-brand-dark/60 backdrop-blur-xl border-b border-white/5"
+      ></div>
+      <nav class="container mx-auto px-6 lg:px-8 py-4 relative z-10">
+        <div class="flex justify-between items-center">
+          <a href="#hero" class="group flex items-center space-x-2">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-brand-accent/20 blur-lg group-hover:bg-brand-accent/30 transition-all duration-300"
+              ></div>
+              <span
+                class="relative text-2xl font-bold font-display text-brand-accent tracking-tight"
+              >
+                &lt;A7med<span class="text-brand-light">/&gt;</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="hidden md:flex items-center space-x-1 bg-white/5 rounded-full px-2 py-2 backdrop-blur-sm border border-white/10"
+          >
+            <a
+              href="#about"
+              class="nav-link px-4 py-2 rounded-full text-sm font-medium text-brand-muted hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="nav-link px-4 py-2 rounded-full text-sm font-medium text-brand-muted hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="nav-link px-4 py-2 rounded-full text-sm font-medium text-brand-muted hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+              >Projects</a
+            >
+            <a
+href="#research"
+class="nav-link px-4 py-2 rounded-full text-sm font-medium text-brand-muted hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+>Research</a>
+            <a
+              href="#experience"
+              class="nav-link px-4 py-2 rounded-full text-sm font-medium text-brand-muted hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="nav-link px-4 py-2 bg-brand-accent text-brand-dark rounded-full text-sm font-semibold hover:bg-brand-accent-dark hover:shadow-glow transition-all duration-300"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden relative group p-2 rounded-lg bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all duration-300"
+          >
+            <i
+              data-lucide="menu"
+              class="w-6 h-6 text-brand-light group-hover:text-brand-accent transition-colors"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Dropdown -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 right-0 bg-brand-card/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
+      >
+        <div class="container mx-auto px-6 py-4 space-y-1">
+          <a
+            href="#about"
+            class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-brand-light hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-brand-light hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-brand-light hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+            >Projects</a
+          >
+          <a
+href="#research"
+class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-brand-light hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+>Research</a>
+          <a
+            href="#experience"
+            class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-brand-light hover:text-brand-accent hover:bg-white/10 transition-all duration-300"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="mobile-nav-link block px-4 py-3 bg-brand-accent text-brand-dark rounded-lg text-sm font-semibold text-center hover:bg-brand-accent-dark transition-all duration-300"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-20"
+      >
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center space-y-8 section-reveal">
+            <!-- Status Badge -->
+            <div
+              class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-brand-muted animate-float"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"
+                ></span>
+              </span>
+              <span>Available for new opportunities</span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="space-y-6">
+              <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-bold font-display leading-tight"
+              >
+                <span class="block text-brand-light">Ahmed Mohamed</span>
+                <span
+                  class="block bg-gradient-to-r from-brand-accent via-brand-blue to-brand-purple bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                >
+                  SaadElDin
+                </span>
+              </h1>
+
+              <p
+                class="text-xl md:text-2xl lg:text-3xl text-brand-muted font-light max-w-4xl mx-auto leading-relaxed"
+              >
+                Building & securing digital experiences through
+                <br class="hidden md:block" />
+                <span class="relative inline-block">
+                  <span
+                    id="typing-text"
+                    class="font-mono font-semibold text-brand-accent"
+                  ></span>
+                  <span class="typing-cursor"></span>
+                </span>
+              </p>
+            </div>
+
+<!-- CTA Buttons -->
+
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+
+
+<a
+href="Ahmed_Saad_CV.pdf"
+target="_blank"
+class="group relative px-8 py-4 bg-brand-accent text-brand-dark font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-glow hover:scale-105"
+>
+
+<span class="relative z-10 flex items-center space-x-2">
+
+<span>Download Resume</span>
+
+<i data-lucide="download" class="w-4 h-4"></i>
+
+</span>
+
+</a>
+
+
+
+<a
+href="#contact"
+class="group relative px-8 py-4 bg-white/5 backdrop-blur-sm text-brand-light font-semibold rounded-xl border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+>
+
+<span class="flex items-center space-x-2">
+
+<span>Let's Talk</span>
+
+<i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+</span>
+
+</a>
+
+
+
+<a
+href="#projects"
+class="group px-8 py-4 bg-white/5 backdrop-blur-sm text-brand-light font-semibold rounded-xl border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+>
+
+<span class="flex items-center space-x-2">
+
+<span>View Projects</span>
+
+<i data-lucide="code-2" class="w-4 h-4"></i>
+
+</span>
+
+</a>
+
+
+</div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center space-x-4 pt-8">
+              <a
+                href="http://github.com/A7medzx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-3 rounded-lg bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+              >
+                <i
+                  data-lucide="github"
+                  class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+                ></i>
+              </a>
+              <a
+                href="http://linkedin.com/in/ahmed-mohamed-saad-01b099288"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-3 rounded-lg bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+              >
+                <i
+                  data-lucide="linkedin"
+                  class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+                ></i>
+              </a>
+              <a
+                href="tel:+201067232153"
+                class="group p-3 rounded-lg bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+              >
+                <i
+                  data-lucide="phone"
+                  class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <i data-lucide="chevron-down" class="w-6 h-6 text-brand-muted"></i>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about" class="py-24 md:py-32 px-6 lg:px-8 section-reveal">
+        <div class="container mx-auto max-w-6xl">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-brand-accent/10 text-brand-accent text-sm font-mono font-semibold mb-4"
+            >
+              Who I Am
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+              About Me<span class="text-brand-accent">.</span>
+            </h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-brand-accent to-brand-purple mx-auto rounded-full"
+            ></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Text Content -->
+            <div class="space-y-6">
+              <div
+                class="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/30 transition-all duration-500 group"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-purple/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+                <div class="relative z-10">
+                  <p class="text-lg text-brand-light/90 leading-relaxed mb-4">
+                    I am a
+                    <strong class="text-brand-accent"
+                      >Third-year Computer Science student</strong
+                    >
+                    passionate about the intersection of
+                    <strong class="text-brand-accent"
+                      >cybersecurity, penetration testing, and web security</strong
+                    >. I combine my academic knowledge with hands-on experience in real-world vulnerability testing and security research while building applications with technologies like 
+                    <strong class="text-white"
+                      >HTML, CSS, JavaScript, and C#</strong
+                    >.
+                  </p>
+                  <p class="text-lg text-brand-light/90 leading-relaxed">
+                    With experience in customer-facing roles, I excel at
+                    translating complex security threats into clear, actionable
+                    insights for non-technical audiences. My goal is to become a
+                    <strong class="text-brand-accent"
+                      >Penetration Tester and Security Researcher</strong
+                    >, dedicated to helping organizations strengthen their
+                    digital defenses.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-4">
+
+              <div
+                class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-300 hover:scale-105"
+              >
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-brand-purple/10">
+                    <i
+                      data-lucide="code-2"
+                      class="w-5 h-5 text-brand-purple"
+                    ></i>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold text-brand-purple mb-1">8+</div>
+                <div class="text-sm text-brand-muted">Projects Built</div>
+              </div>
+
+              <div
+                class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-blue/50 transition-all duration-300 hover:scale-105"
+              >
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-brand-blue/10">
+                    <i data-lucide="award" class="w-5 h-5 text-brand-blue"></i>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold text-brand-blue mb-1">200+</div>
+                <div class="text-sm text-brand-muted">Training Hours</div>
+              </div>
+
+              <div
+                class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-300 hover:scale-105"
+              >
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-brand-accent/10">
+                    <i
+                      data-lucide="shield-check"
+                      class="w-5 h-5 text-brand-accent"
+                    ></i>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold text-brand-accent mb-1">5+</div>
+                <div class="text-sm text-brand-muted">Certifications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-24 md:py-32 px-6 lg:px-8 section-reveal">
+        <div class="container mx-auto max-w-6xl">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-brand-purple/10 text-brand-purple text-sm font-mono font-semibold mb-4"
+            >
+              What I Do
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+              Core Competencies<span class="text-brand-accent">.</span>
+            </h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto rounded-full"
+            ></div>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Cybersecurity -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="mb-6 inline-flex p-4 rounded-xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors duration-300"
+                >
+                  <i
+                    data-lucide="shield-check"
+                    class="w-8 h-8 text-brand-accent"
+                  ></i>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 text-white group-hover:text-brand-accent transition-colors"
+                >
+                  Cybersecurity
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed mb-4">
+                  Web Penetration Testing, Android Pentesting, XSS, SQL Injection, Access Control Testing
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Nmap</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Burp Suite</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Metasploit</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Wireshark</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Web Development -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-500 hover:scale-105 hover:shadow-glow-purple"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="mb-6 inline-flex p-4 rounded-xl bg-brand-purple/10 group-hover:bg-brand-purple/20 transition-colors duration-300"
+                >
+                  <i data-lucide="code" class="w-8 h-8 text-brand-purple"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 text-white group-hover:text-brand-purple transition-colors"
+                >
+                  Web Development
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed mb-4">
+                  Full-stack development with modern web technologies
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >HTML/CSS</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >Node.js</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >MySQL</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Programming -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-blue/50 transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="mb-6 inline-flex p-4 rounded-xl bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors duration-300"
+                >
+                  <i
+                    data-lucide="terminal-square"
+                    class="w-8 h-8 text-brand-blue"
+                  ></i>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 text-white group-hover:text-brand-blue transition-colors"
+                >
+                  Programming
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed mb-4">
+                  Systems programming and embedded development
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >C/C++</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >C#</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >Git</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >Linux</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >Bash</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div
+              class="group relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="mb-6 inline-flex p-4 rounded-xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors duration-300"
+                >
+                  <i data-lucide="users" class="w-8 h-8 text-brand-accent"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 text-white group-hover:text-brand-accent transition-colors"
+                >
+                  Soft Skills
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed mb-4">
+                  Professional skills for effective collaboration
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Problem-Solving</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Critical Thinking</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Communication</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Teamwork</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="pt-24 pb-12 md:pt-32 md:pb-16 px-6 lg:px-8 section-reveal visible">
+        <div class="container mx-auto max-w-7xl">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-mono font-semibold mb-4"
+            >
+              My Work
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+              Featured Projects<span class="text-brand-accent">.</span>
+            </h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-brand-blue to-brand-accent mx-auto rounded-full"
+            ></div>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- CVE Discovery Project -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-red-500/10 group-hover:bg-red-500/20 transition-colors"
+                  >
+                    <i data-lucide="bug" class="w-6 h-6 text-red-400"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-mono font-semibold"
+                    >CVE-2025-0133</span
+                  >
+                </div>
+
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-accent transition-colors"
+                >
+                  PAN-OS XSS Vulnerability Validation
+                </h3>
+
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Identified an instance of the public CVE-2025-0133 reflected
+                  Cross-Site Scripting (XSS) vulnerability on an AT&T
+                  GlobalProtect portal during independent security testing.
+                  Submitted a responsible disclosure report which was reviewed
+                  and classified as informative.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Security Research</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Vulnerability Validation</span
+                  >
+                </div>
+
+                <div
+                  class="pt-4 border-t border-white/5 flex items-center justify-between"
+                >
+                  <span class="text-xs text-brand-muted font-mono">2025</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kioptrix Pentest -->
+<div
+  class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-red-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+>
+
+<div
+  class="absolute inset-0 bg-gradient-to-br from-red-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+></div>
+
+<div class="relative z-10 p-6 flex flex-col h-full">
+
+<div class="flex items-start justify-between mb-4">
+
+<div class="p-3 rounded-xl bg-red-500/10 group-hover:bg-red-500/20 transition-colors">
+
+<i data-lucide="shield" class="w-6 h-6 text-red-400"></i>
+
+</div>
+
+</div>
+
+<h3 class="text-xl font-bold font-display mb-3 group-hover:text-red-400 transition-colors">
+
+Kioptrix Penetration Test
+
+</h3>
+
+<p class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow">
+
+Performed a full penetration test on the Kioptrix vulnerable machine including reconnaissance, SQL injection exploitation, and privilege escalation. Produced a professional penetration testing report with detailed findings and remediation steps.
+
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-red-400 border border-red-400/20">
+Pentesting
+</span>
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-red-400 border border-red-400/20">
+SQL Injection
+</span>
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-red-400 border border-red-400/20">
+Privilege Escalation
+</span>
+
+</div>
+
+<div class="pt-4 border-t border-white/5">
+
+<span class="text-xs text-brand-muted font-mono">
+Offensive Security
+</span>
+
+</div>
+
+</div>
+</div>
+
+            <!-- Online Shop Project -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="shopping-cart"
+                      class="w-6 h-6 text-brand-accent"
+                    ></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/Online_Shop/tree/main"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-accent transition-colors"
+                >
+                  PHP Online Shop
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Full-featured e-commerce platform with user authentication,
+                  shopping cart, and admin panel for product management.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >MySQL</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >E-commerce</span
+                  >
+                </div>
+                <div
+                  class="pt-4 border-t border-white/5 flex items-center justify-between"
+                >
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Full Stack</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Flutter Attendance System -->
+<div
+  class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-blue/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+>
+
+<div
+  class="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+></div>
+
+<div class="relative z-10 p-6 flex flex-col h-full">
+
+<div class="flex items-start justify-between mb-4">
+
+<div class="p-3 rounded-xl bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors">
+
+<i data-lucide="smartphone" class="w-6 h-6 text-brand-blue"></i>
+
+</div>
+
+</div>
+
+<h3 class="text-xl font-bold font-display mb-3 group-hover:text-brand-blue transition-colors">
+
+Flutter Attendance System
+
+</h3>
+
+<p class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow">
+
+Cross-platform attendance application built with Flutter and a .NET REST API backend. Implemented authentication, role-based access control, QR-based attendance scanning, real-time data retrieval, and CSV report export.
+
+</p>
+
+<div class="flex flex-wrap gap-2 mb-4">
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20">
+Flutter
+</span>
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20">
+.NET API
+</span>
+
+<span class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20">
+SQL
+</span>
+
+</div>
+
+<div class="pt-4 border-t border-white/5">
+
+<span class="text-xs text-brand-muted font-mono">
+Mobile App
+</span>
+
+</div>
+
+</div>
+</div>
+
+            <!-- User Management System -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-blue/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="user-cog"
+                      class="w-6 h-6 text-brand-blue"
+                    ></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/user_db/tree/main"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-blue transition-colors"
+                >
+                  User Management System
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Comprehensive user management with registration, login,
+                  profile management, and image uploads.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >Auth</span
+                  >
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Backend</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- PHP CRUD -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-purple/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow-purple"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-purple/10 group-hover:bg-brand-purple/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="database"
+                      class="w-6 h-6 text-brand-purple"
+                    ></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/usesr_app/blob/main/README.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-purple transition-colors"
+                >
+                  Simple CRUD App
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Clean CRUD application demonstrating database operations with
+                  PHP and MySQL.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >CRUD</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >PHP</span
+                  >
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Database</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- ATmega32 -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors"
+                  >
+                    <i data-lucide="cpu" class="w-6 h-6 text-brand-accent"></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/ATmega32-Custom-Peripheral-Drivers/tree/main"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-accent transition-colors"
+                >
+                  ATmega32 Drivers
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Complete embedded system with custom low-level drivers (ADC,
+                  UART, SPI, Timers) developed from scratch.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >Embedded C</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-accent border border-brand-accent/20"
+                    >AVR</span
+                  >
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Embedded Systems</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Prison Management -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-blue/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="building"
+                      class="w-6 h-6 text-brand-blue"
+                    ></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/Prison_Management_System"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-blue transition-colors"
+                >
+                  Prison Manager
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Desktop application for managing inmate records, staff data,
+                  and facility operations.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >C#</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-blue border border-brand-blue/20"
+                    >.NET</span
+                  >
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Desktop App</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Rock Paper Scissors -->
+            <div
+              class="group relative rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 overflow-hidden hover:border-brand-purple/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow-purple"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative z-10 p-6 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-purple/10 group-hover:bg-brand-purple/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="gamepad-2"
+                      class="w-6 h-6 text-brand-purple"
+                    ></i>
+                  </div>
+                  <a
+                    href="https://github.com/A7medzx/Rock_Paper_Scissors_Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-4 h-4 text-brand-muted hover:text-white"
+                    ></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl font-bold font-display mb-3 group-hover:text-brand-purple transition-colors"
+                >
+                  Rock-Paper-Scissors
+                </h3>
+                <p
+                  class="text-sm text-brand-muted leading-relaxed mb-6 flex-grow"
+                >
+                  Interactive game with score persistence, keyboard controls,
+                  and auto-play feature.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs rounded-md bg-white/5 text-brand-purple border border-brand-purple/20"
+                    >Game</span
+                  >
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                  <span class="text-xs text-brand-muted font-mono"
+                    >Interactive</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section id="research" class="pt-12 pb-24 md:pt-16 md:pb-32 px-6 lg:px-8 section-reveal">
+
+<div class="container mx-auto max-w-7xl">
+
+<div class="text-center mb-16">
+
+<span class="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-mono font-semibold mb-4">
+
+Security Research
+
+</span>
+
+<h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+
+Writeups & Research<span class="text-brand-accent">.</span>
+
+</h2>
+
+<div class="w-20 h-1 bg-gradient-to-r from-red-400 to-brand-accent mx-auto rounded-full"></div>
+
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+<!-- Kioptrix -->
+
+<div class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-red-400/50 transition-all duration-500">
+
+<div class="flex items-start justify-between mb-4">
+
+<i data-lucide="shield" class="w-6 h-6 text-red-400"></i>
+
+<a href="https://docs.google.com/document/d/1sSHSd3ugw-VJ5IHG1IFudFum1tkRWqfr/edit?usp=sharing&ouid=111202706338510288822&rtpof=true&sd=true"
+
+target="_blank"
+
+class="p-2 rounded-lg bg-white/5 hover:bg-white/10">
+
+<i data-lucide="external-link" class="w-4 h-4"></i>
+
+</a>
+
+</div>
+
+<h3 class="text-xl font-bold mb-3">
+
+Kioptrix Pentest Writeup
+
+</h3>
+
+<p class="text-sm text-brand-muted">
+
+Full penetration testing walkthrough including enumeration, SQL injection exploitation and privilege escalation.
+
+</p>
+
+</div>
+
+
+
+<!-- Android -->
+
+<div class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-blue/50 transition-all duration-500">
+
+<div class="flex items-start justify-between mb-4">
+
+<i data-lucide="smartphone" class="w-6 h-6 text-brand-blue"></i>
+
+<a href="https://medium.com/@ahmedm.saad005/beetlebug-apk-mobile-security-ctf-write-up-2f10a0f85f3b"
+
+target="_blank"
+
+class="p-2 rounded-lg bg-white/5 hover:bg-white/10">
+
+<i data-lucide="external-link" class="w-4 h-4"></i>
+
+</a>
+
+</div>
+
+<h3 class="text-xl font-bold mb-3">
+
+Android Pentesting Writeups
+
+</h3>
+
+<p class="text-sm text-brand-muted">
+
+Android application security testing including static analysis and runtime testing.
+
+</p>
+
+</div>
+
+
+
+<!-- Zinad -->
+
+<div class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-500">
+
+<div class="flex items-start justify-between mb-4">
+
+<i data-lucide="cpu" class="w-6 h-6 text-brand-purple"></i>
+
+<a href="https://medium.com/@ahmedm.saad005/cyber-champions-ctf-2026-reverse-engineering-challenges-writeup-d20216148fea"
+
+target="_blank"
+
+class="p-2 rounded-lg bg-white/5 hover:bg-white/10">
+
+<i data-lucide="external-link" class="w-4 h-4"></i>
+
+</a>
+
+</div>
+
+<h3 class="text-xl font-bold mb-3">
+
+Zinad CTF Reverse Engineering
+
+</h3>
+
+<p class="text-sm text-brand-muted">
+
+Reverse engineering challenges solved during Zinad CTF competition.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+      <!-- Experience Section -->
+      <section
+        id="experience"
+        class="py-24 md:py-32 px-6 lg:px-8 section-reveal"
+      >
+<div class="container mx-auto max-w-6xl">
+
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <span class="inline-block px-4 py-2 rounded-full bg-brand-purple/10 text-brand-purple text-sm font-mono font-semibold mb-4">
+      Journey
+    </span>
+
+    <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+      Experience & Training<span class="text-brand-accent">.</span>
+    </h2>
+
+    <div class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-accent mx-auto rounded-full"></div>
+  </div>
+
+
+  <div class="relative max-w-4xl mx-auto">
+
+  <!-- Vertical Line -->
+  <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-accent via-brand-purple to-brand-blue md:-translate-x-1/2"></div>
+
+
+  <!-- Android Pentesting Internship -->
+
+  <div class="relative mb-16 flex flex-col md:flex-row md:justify-end md:items-center pl-16 md:pl-0">
+
+  <div class="absolute left-8 md:left-1/2 w-3 h-3 bg-brand-accent rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-glow"></div>
+
+  <div class="w-full md:w-5/12 md:pl-10">
+
+  <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-glow">
+
+  <div class="relative z-10">
+
+  <span class="inline-block px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-mono font-semibold rounded-full mb-3">
+  Jan – Feb 2026
+  </span>
+
+  <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-brand-accent transition-colors">
+  Android Pentesting Intern
+  </h3>
+
+  <div class="text-brand-accent text-sm font-semibold mb-3">
+  Orange Digital Center Egypt
+  </div>
+
+  <p class="text-sm text-brand-muted leading-relaxed">
+
+  Conducted hands-on Android penetration testing including static and dynamic analysis.  
+  Used JADX, Frida, and ADB to identify insecure storage, exported components, and security misconfigurations.
+
+  </p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <!-- Teleperformance -->
+
+  <div class="relative mb-16 flex flex-col md:flex-row md:justify-start md:items-center pl-16 md:pl-0">
+
+  <div class="absolute left-8 md:left-1/2 w-3 h-3 bg-brand-purple rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-glow-purple"></div>
+
+  <div class="w-full md:w-5/12 md:pr-10 md:text-right">
+
+  <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-500 hover:scale-105 hover:shadow-glow-purple">
+
+  <div class="relative z-10">
+
+  <span class="inline-block px-3 py-1 bg-brand-purple/10 text-brand-purple text-xs font-mono font-semibold rounded-full mb-3">
+  2025 – 2026
+  </span>
+
+  <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-brand-purple transition-colors">
+  Customer Service Agent
+  </h3>
+
+  <div class="text-brand-purple text-sm font-semibold mb-3">
+  Teleperformance
+  </div>
+
+  <p class="text-sm text-brand-muted leading-relaxed">
+
+  Enforced account security and privacy procedures while assisting customers.  
+  Identified and escalated suspected social engineering attempts.
+
+  </p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <!-- DEMI -->
+
+  <div class="relative mb-16 flex flex-col md:flex-row md:justify-end md:items-center pl-16 md:pl-0">
+
+  <div class="absolute left-8 md:left-1/2 w-3 h-3 bg-brand-blue rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-glow"></div>
+
+  <div class="w-full md:w-5/12 md:pl-10">
+
+  <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-blue/50 transition-all duration-500 hover:scale-105 hover:shadow-glow">
+
+  <div class="relative z-10">
+
+  <span class="inline-block px-3 py-1 bg-brand-blue/10 text-brand-blue text-xs font-mono font-semibold rounded-full mb-3">
+  Dec 2025
+  </span>
+
+  <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-brand-blue transition-colors">
+  Content Creator & CS Educator
+  </h3>
+
+  <div class="text-brand-blue text-sm font-semibold mb-3">
+  Digital Egypt Marvels Initiative
+  </div>
+
+  <p class="text-sm text-brand-muted leading-relaxed">
+
+  Produced 56 educational videos covering Python basics, introductory machine learning, and robotics concepts for young learners.
+
+  </p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <!-- PBS Cold Caller -->
+
+  <div class="relative mb-16 flex flex-col md:flex-row md:justify-start md:items-center pl-16 md:pl-0">
+
+  <div class="absolute left-8 md:left-1/2 w-3 h-3 bg-brand-accent rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-glow"></div>
+
+  <div class="w-full md:w-5/12 md:pr-10 md:text-right">
+
+  <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-500 hover:scale-105 hover:shadow-glow">
+
+  <div class="relative z-10">
+
+  <span class="inline-block px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-mono font-semibold rounded-full mb-3">
+  2024
+  </span>
+
+  <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-brand-accent transition-colors">
+  Cold Caller
+  </h3>
+
+  <div class="text-brand-accent text-sm font-semibold mb-3">
+  PBS
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <!-- AI Trainer -->
+
+  <div class="relative flex flex-col md:flex-row md:justify-end md:items-center pl-16 md:pl-0">
+
+  <div class="absolute left-8 md:left-1/2 w-3 h-3 bg-brand-purple rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-glow-purple"></div>
+
+  <div class="w-full md:w-5/12 md:pl-10">
+
+  <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-500 hover:scale-105 hover:shadow-glow-purple">
+
+  <div class="relative z-10">
+
+  <span class="inline-block px-3 py-1 bg-brand-purple/10 text-brand-purple text-xs font-mono font-semibold rounded-full mb-3">
+  2023
+  </span>
+
+  <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-brand-purple transition-colors">
+  AI Data Contributor
+  </h3>
+
+  <div class="text-brand-purple text-sm font-semibold mb-3">
+  Freelance
+  </div>
+
+  <p class="text-sm text-brand-muted leading-relaxed">
+
+  Contributed German-language training data to improve machine learning model accuracy.
+
+  </p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  </div>
+</div>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24 md:py-32 px-6 lg:px-8 section-reveal">
+        <div class="container mx-auto max-w-5xl">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <span
+              class="inline-block px-4 py-2 rounded-full bg-brand-accent/10 text-brand-accent text-sm font-mono font-semibold mb-4"
+            >
+              Get In Touch
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+              Let's Connect<span class="text-brand-accent">.</span>
+            </h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-brand-accent to-brand-blue mx-auto rounded-full mb-6"
+            ></div>
+            <p
+              class="text-lg text-brand-muted max-w-2xl mx-auto leading-relaxed"
+            >
+              I'm seeking new opportunities and collaborations. Feel free to
+              reach out via the form below, or connect with me directly.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+              <!-- Email -->
+              <div
+                class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/50 transition-all duration-300"
+              >
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-accent/10 group-hover:bg-brand-accent/20 transition-colors"
+                  >
+                    <i data-lucide="mail" class="w-6 h-6 text-brand-accent"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">Email</h3>
+                    <p class="text-sm text-brand-muted">
+                      Send me a message anytime
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div
+                class="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-purple/50 transition-all duration-300"
+              >
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="p-3 rounded-xl bg-brand-purple/10 group-hover:bg-brand-purple/20 transition-colors"
+                  >
+                    <i
+                      data-lucide="phone"
+                      class="w-6 h-6 text-brand-purple"
+                    ></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">Phone</h3>
+                    <a
+                      href="tel:+201067232153"
+                      class="text-sm text-brand-muted hover:text-brand-purple transition-colors"
+                    >
+                      +20 106 723 2153
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social -->
+              <div
+                class="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10"
+              >
+                <h3 class="font-semibold text-white mb-4">Follow Me</h3>
+                <div class="flex space-x-3">
+                  <a
+                    href="http://linkedin.com/in/ahmed-mohamed-saad-01b099288"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group p-3 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+                  >
+                    <i
+                      data-lucide="linkedin"
+                      class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+                    ></i>
+                  </a>
+                  <a
+                    href="http://github.com/A7medzx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group p-3 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+                  >
+                    <i
+                      data-lucide="github"
+                      class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+                    ></i>
+                  </a>
+<a
+  href="https://medium.com/@ahmedm.saad005"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group p-3 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+>
+  <svg
+    class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path d="M4 6.5C4 6.22 4.22 6 4.5 6h2.8c.21 0 .41.1.53.27l3.14 4.5 3.18-4.5c.12-.17.32-.27.53-.27h2.79c.28 0 .5.22.5.5v11c0 .28-.22.5-.5.5h-2.79a.5.5 0 01-.5-.5v-6.3l-2.72 3.88a.5.5 0 01-.82 0L7.79 11.2v6.3a.5.5 0 01-.5.5H4.5a.5.5 0 01-.5-.5v-11z"/>
+  </svg>
+</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+              class="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-brand-accent/30 transition-all duration-500"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-purple/5 rounded-2xl opacity-50"
+              ></div>
+              <form
+                id="contact-form"
+                action="https://formspree.io/f/mgvnonko"
+                method="POST"
+                class="relative z-10 space-y-5"
+              >
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-brand-light mb-2"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-brand-light focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all placeholder-brand-muted/50"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-brand-light mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-brand-light focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all placeholder-brand-muted/50"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-semibold text-brand-light mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-brand-light focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all placeholder-brand-muted/50 resize-none"
+                    placeholder="Hello Ahmed..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="group w-full relative px-8 py-4 bg-brand-accent text-brand-dark font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-glow hover:scale-[1.02]"
+                >
+                  <span
+                    class="relative z-10 flex items-center justify-center space-x-2"
+                  >
+                    <span>Send Message</span>
+                    <i
+                      data-lucide="send"
+                      class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </span>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-accent-dark to-brand-accent opacity-0 group-hover:opacity-100 transition-opacity"
+                  ></div>
+                </button>
+                <p id="form-status" class="text-center text-sm"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="relative border-t border-white/5 py-12 mt-12 bg-brand-darker/50 backdrop-blur-xl"
+    >
+      <div class="container mx-auto px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0"
+        >
+          <div class="text-center md:text-left">
+            <div
+              class="flex items-center justify-center md:justify-start space-x-2 mb-2"
+            >
+              <span class="text-xl font-bold font-display text-brand-accent"
+                >&lt;A7med/&gt;</span
+              >
+            </div>
+            <p class="text-sm text-brand-muted">
+              &copy; <span id="year"></span> Ahmed Mohamed SaadElDin. All rights
+              reserved.
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-6">
+            <a
+              href="#about"
+              class="text-sm text-brand-muted hover:text-brand-accent transition-colors"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="text-sm text-brand-muted hover:text-brand-accent transition-colors"
+              >Projects</a
+            >
+            <a href="#research" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+Research
+</a>
+            <a
+              href="#contact"
+              class="text-sm text-brand-muted hover:text-brand-accent transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/5 text-center">
+          <p class="text-xs text-brand-muted">
+            Designed & Built with
+            <span class="text-brand-accent">passion</span> and
+            <span class="text-brand-accent">code</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
