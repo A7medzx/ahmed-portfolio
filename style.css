@@ -92,6 +92,10 @@ html {
     transform: translateY(0);
 }
 
+section {
+    scroll-margin-top: 120px;
+}
+
 /* Header Scroll Effect */
 #header {
     transition: all 0.3s ease;

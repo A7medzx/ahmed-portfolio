@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.querySelector(href);
                 
                 if (target) {
-                    const headerHeight = header ? header.offsetHeight : 80;
-                    const targetPosition = target.offsetTop - headerHeight;
+                        const headerHeight = 120; // fixed safe offset
+                        const targetPosition = target.offsetTop - headerHeight;
                     
                     window.scrollTo({
                         top: targetPosition,
